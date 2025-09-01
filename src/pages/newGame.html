@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adivinhe a imagem</title>
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="../style/newGame.css" />
+  </head>
+  <body>
+    <main>
+      <div id="main-container">
+        <h1>Novo jogo</h1>
+
+        <form id="new-game-form">
+          <fieldset id="game-config-fieldset">
+            <legend>Configurações de jogo</legend>
+
+            <div id="game-name-container">
+              <label for="game-name">Escolha um nome para seu jogo:</label>
+              <input
+                type="text"
+                name="game-name"
+                id="game-name"
+                placeholder="Nome do jogo"
+              />
+            </div>
+
+            <div id="config-options">
+              <div id="only-img-container">
+                <input
+                  type="radio"
+                  name="game-config"
+                  id="only-img"
+                  value="only-img"
+                  checked
+                />
+                <label for="only-img">Apenas imagem</label>
+              </div>
+              <div id="img-clues-container">
+                <input
+                  type="radio"
+                  name="game-config"
+                  id="img-clues"
+                  value="img-clues"
+                />
+                <label for="img-clues">Imagem + Dicas</label>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset id="img-upload-fieldset">
+            <legend>Escolha suas imagens</legend>
+            <p>
+              Nomeie as imagens numericamente, na ordem que você quer que
+              apareça no jogo! (Ex.: image1.png, image2.png, image3.png...)
+            </p>
+
+            <label id="img-upload-label" for="img-upload"
+              >Carregue as imagens</label
+            >
+            <input type="file" name="img-upload" id="img-upload" multiple />
+          </fieldset>
+
+          <fieldset id="clues-fieldset">
+            <legend>Dicas</legend>
+            <div id="clue-number-container">
+              <label for="clue-number">Quantas dicas quer usar?</label>
+              <input
+                type="number"
+                name="clue-number"
+                id="clue-number"
+                min="1"
+                max="10"
+                placeholder="1 a 10"
+              />
+              <button type="button" id="clue-number-btn">Confirmar</button>
+            </div>
+
+            <div id="clues">
+              <table id="clue-table">
+                <tr>
+                  <th>Dicas</th>
+                  <th>Valores</th>
+                </tr>
+                <tr>
+                  <td><input type="text" placeholder="Dica" /></td>
+                  <td><input type="text" placeholder="Valor" /></td>
+                </tr>
+                <tr>
+                  <td><input type="text" placeholder="Dica" /></td>
+                  <td><input type="text" placeholder="Valor" /></td>
+                </tr>
+                <tr>
+                  <td><input type="text" placeholder="Dica" /></td>
+                  <td><input type="text" placeholder="Valor" /></td>
+                </tr>
+                <tr>
+                  <td><input type="text" placeholder="Dica" /></td>
+                  <td><input type="text" placeholder="Valor" /></td>
+                </tr>
+                <tr>
+                  <td><input type="text" placeholder="Dica" /></td>
+                  <td><input type="text" placeholder="Valor" /></td>
+                </tr>
+                <tr>
+                  <td><input type="text" placeholder="Dica" /></td>
+                  <td><input type="text" placeholder="Valor" /></td>
+                </tr>
+                <tr>
+                  <td><input type="text" placeholder="Dica" /></td>
+                  <td><input type="text" placeholder="Valor" /></td>
+                </tr>
+                <tr>
+                  <td><input type="text" placeholder="Dica" /></td>
+                  <td><input type="text" placeholder="Valor" /></td>
+                </tr>
+                <tr>
+                  <td><input type="text" placeholder="Dica" /></td>
+                  <td><input type="text" placeholder="Valor" /></td>
+                </tr>
+                <tr>
+                  <td><input type="text" placeholder="Dica" /></td>
+                  <td><input type="text" placeholder="Valor" /></td>
+                </tr>
+              </table>
+            </div>
+          </fieldset>
+
+          <div id="submit-container">
+            <button type="submit" id="create-game-btn">Criar jogo</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <script src="../script/newGame.js"></script>
+  </body>
+  <a href="../../index.html" style="font-size: 1rem">Home</a>
+</html>

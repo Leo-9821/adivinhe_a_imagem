@@ -1,0 +1,170 @@
+/* 
+0.64rem;
+0.8rem;
+1rem;
+1.25rem;
+1.56rem;
+1.95rem;
+2.44rem;
+3.05rem;
+3.81rem; */
+
+:root {
+  --primary-color: #073b4c;
+  --primary-light-color: #6acff1;
+  --primary-lightest-color: #c7edfa;
+  --secondary-color: #ffd166;
+  --secondary-light-color: #ffedc2;
+  --tertiary-color: #ef476f;
+  --tertiary-light-color: #f8b4c4;
+  --quaternary-color: #06d6a0;
+  --quaternary-light-color: #9cfce3;
+  --white: #fff;
+  --black: #000;
+  --light-gray: #f4f4f4;
+  --dark-gray: #3a3a3a;
+}
+
+#main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+#new-game-form {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  background-color: var(--light-gray);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  margin-top: 5rem;
+  width: auto;
+  max-width: 100%;
+}
+
+#game-config-fieldset,
+#img-upload-fieldset,
+#clues-fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid var(--dark-gray);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  width: auto;
+  max-width: 100%;
+}
+
+#config-options {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* alinha verticalmente */
+  gap: 0.8rem; /* espaçamento entre os itens */
+}
+
+input[type='text'],
+input[type='number'] {
+  padding: 0.5rem;
+  border: 1px solid var(--dark-gray);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+}
+
+input[type='file'] {
+  display: none;
+}
+
+#img-upload-label {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-light-color);
+  color: var(--primary-color);
+  border-radius: 2rem;
+  cursor: pointer;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
+}
+
+#img-upload-label:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+  transform: scale(1.05);
+}
+
+#clues-fieldset {
+  display: none;
+}
+
+#clues-fieldset.visible {
+  display: flex;
+}
+
+#game-name-container,
+#clue-number-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+#game-name-container label,
+#clue-number-container label {
+  white-space: nowrap;
+}
+
+#game-name-container input,
+#clue-number-container input {
+  width: 18rem;
+  max-width: 100%;
+  flex: unset;
+  padding: 0.4rem 0.8rem;
+  font-size: 1rem;
+}
+
+#clue-number-container input {
+  width: 6rem;
+}
+
+button {
+  padding: 0.45rem 1rem;
+}
+
+table {
+  font-size: 1rem;
+}
+
+td > input {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 1px solid var(--dark-gray);
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+#submit-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#create-game-btn {
+  width: 75%;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border: solid 1px var(--quaternary-color);
+  color: var(--black);
+  background-color: var(--quaternary-color);
+}
+
+#create-game-btn:hover {
+  background-color: var(--quaternary-light-color);
+  border-color: var(--quaternary-light-color);
+}

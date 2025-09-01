@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adivinhe a imagem</title>
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="../style/game.css" />
+  </head>
+  <body>
+    <a href="../../index.html">Home</a>
+    <main>
+      <div id="left-column">
+        <h1>Adivinhe a imagem</h1>
+        <section id="image-section">
+          <div id="image-container">
+            <!-- ! Lembrar de refazer a importação das imagens -->
+            <img src="../img/image1.png" id="secret-image" />
+            <div class="image-grid-overlay"></div>
+          </div>
+        </section>
+      </div>
+      <section id="info-section">
+        <h2 id="answer">Cerrado</h2>
+
+        <h3 id="table-title">Dicas</h3>
+        <table id="info-table">
+          <tr>
+            <td>Pluviosidade média</td>
+            <td>1500mm</td>
+          </tr>
+          <tr>
+            <td>Temperatura média</td>
+            <td>22ºC</td>
+          </tr>
+          <tr>
+            <td>Solo</td>
+            <td>
+              Pobre em nutrientes, porém apresenta teor alto de ferro e alumínio
+            </td>
+          </tr>
+          <tr>
+            <td>Flora</td>
+            <td>Gramíneas, herbáceas e árvores esparsas</td>
+          </tr>
+          <tr>
+            <td>Flora característica</td>
+            <td>Buriti, barbatimão, pequi...</td>
+          </tr>
+          <tr>
+            <td>Fauna</td>
+            <td>Cupin, tamanduá, lobo-guará, ema...</td>
+          </tr>
+          <tr>
+            <td>Localização</td>
+            <td>GO, BA, PI, MA, MS, MT, TO, MG, SP e DF</td>
+          </tr>
+          <tr>
+            <td>Ameaças</td>
+            <td>Desmatamento pelo agronegócio e urbanização</td>
+          </tr>
+          <tr>
+            <td>Curiosidade</td>
+            <td>
+              Algumas sementes precisam passar por uma queimada para germinarem
+            </td>
+          </tr>
+        </table>
+      </section>
+    </main>
+
+    <script type="module" src="../script/game.js"></script>
+  </body>
+</html>
