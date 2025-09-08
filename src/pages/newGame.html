@@ -65,7 +65,9 @@
           <fieldset id="clues-fieldset">
             <legend>Dicas</legend>
             <div id="clue-number-container">
-              <label for="clue-number">Quantas dicas quer usar?</label>
+              <label for="clue-number"
+                >Quantas dicas quer usar? (Máximo 10)</label
+              >
               <input
                 type="number"
                 name="clue-number"
@@ -73,58 +75,16 @@
                 min="1"
                 max="10"
                 placeholder="1 a 10"
+                onkeyup="this.value = this.value > 10 ? 10 : this.value < 0 ? 0 : this.value"
               />
               <button type="button" id="clue-number-btn">Confirmar</button>
             </div>
 
             <div id="clues">
-              <table id="clue-table">
-                <tr>
-                  <th>Dicas</th>
-                  <th>Valores</th>
-                </tr>
-                <tr>
-                  <td><input type="text" placeholder="Dica" /></td>
-                  <td><input type="text" placeholder="Valor" /></td>
-                </tr>
-                <tr>
-                  <td><input type="text" placeholder="Dica" /></td>
-                  <td><input type="text" placeholder="Valor" /></td>
-                </tr>
-                <tr>
-                  <td><input type="text" placeholder="Dica" /></td>
-                  <td><input type="text" placeholder="Valor" /></td>
-                </tr>
-                <tr>
-                  <td><input type="text" placeholder="Dica" /></td>
-                  <td><input type="text" placeholder="Valor" /></td>
-                </tr>
-                <tr>
-                  <td><input type="text" placeholder="Dica" /></td>
-                  <td><input type="text" placeholder="Valor" /></td>
-                </tr>
-                <tr>
-                  <td><input type="text" placeholder="Dica" /></td>
-                  <td><input type="text" placeholder="Valor" /></td>
-                </tr>
-                <tr>
-                  <td><input type="text" placeholder="Dica" /></td>
-                  <td><input type="text" placeholder="Valor" /></td>
-                </tr>
-                <tr>
-                  <td><input type="text" placeholder="Dica" /></td>
-                  <td><input type="text" placeholder="Valor" /></td>
-                </tr>
-                <tr>
-                  <td><input type="text" placeholder="Dica" /></td>
-                  <td><input type="text" placeholder="Valor" /></td>
-                </tr>
-                <tr>
-                  <td><input type="text" placeholder="Dica" /></td>
-                  <td><input type="text" placeholder="Valor" /></td>
-                </tr>
-              </table>
+              <table id="clue-table"></table>
             </div>
+
+            <button type="button" id="insert-clues-btn">Inserir</button>
           </fieldset>
 
           <div id="submit-container">

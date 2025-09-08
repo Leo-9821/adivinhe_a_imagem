@@ -90,6 +90,7 @@ input[type='file'] {
   cursor: pointer;
   text-align: center;
   cursor: pointer;
+  box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.1);
   transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
 }
 
@@ -99,11 +100,13 @@ input[type='file'] {
   transform: scale(1.05);
 }
 
-#clues-fieldset {
+#clues-fieldset,
+#insert-clues-btn {
   display: none;
 }
 
-#clues-fieldset.visible {
+#clues-fieldset.visible,
+#insert-clues-btn.visible {
   display: flex;
 }
 
@@ -147,6 +150,20 @@ td > input {
   border: 1px solid var(--dark-gray);
   border-radius: 0.5rem;
   width: 100%;
+}
+
+#insert-clues-btn {
+  align-self: last baseline;
+  font-weight: 600;
+  border: solid 1px var(--quaternary-light-color);
+  color: var(--black);
+  background-color: var(--quaternary-light-color);
+}
+
+#insert-clues-btn:hover {
+  background-color: var(--quaternary-color);
+  border-color: var(--quaternary-color);
+  color: var(--white);
 }
 
 #submit-container {

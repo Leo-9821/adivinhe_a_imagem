@@ -63,6 +63,7 @@ button {
   color: var(--primary-color);
   background-color: var(--primary-light-color);
   cursor: pointer;
+  box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.1);
   transition: background-color 0.5s ease, color 0.3s ease, transform 0.5s ease;
 }
 
