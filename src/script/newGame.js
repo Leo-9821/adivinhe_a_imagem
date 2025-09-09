@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const cluesFieldset = document.getElementById('clues-fieldset');
   const confirmClueNumberBtn = document.getElementById('clue-number-btn');
   const insertCluesBtn = document.getElementById('insert-clues-btn');
+  const clueTable = document.getElementById('clue-table');
 
   function toggleCluesFieldset() {
     if (imgCluesRadio.checked) {
@@ -15,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function confirmClueNumber() {
     const clueNumberInput = document.getElementById('clue-number');
-    const clueTable = document.getElementById('clue-table');
 
     const clueNumber = parseInt(clueNumberInput.value, 10);
 
@@ -42,8 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const valueInput = document.createElement('input');
       clueInput.type = 'text';
       clueInput.placeholder = 'Dica';
+      clueInput.classList.add('clue-input');
       valueInput.type = 'text';
       valueInput.placeholder = 'Valor';
+      valueInput.classList.add('value-input');
       clueCell.appendChild(clueInput);
       valueCell.appendChild(valueInput);
       row.appendChild(clueCell);
@@ -52,8 +54,53 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function getClues() {
+    const clues = {};
+
+    const rows = clueTable.getElementsByTagName('tr');
+
+    for (let i = 1; i < rows.length; i++) {
+      const cells = rows[i].getElementsByTagName('td');
+      const clueInput = cells[0].getElementsByTagName('input')[0];
+      const valueInput = cells[1].getElementsByTagName('input')[0];
+      const clue = clueInput.value.trim();
+      const value = valueInput.value.trim();
+      if (clue && value) {
+        clues[clue] = value;
+      }
+    }
+    return clues;
+  }
+
+  function setClues(clues) {
+    if (Object.keys(clues).length) {
+      // Busca o maior índice já salvo
+      let maxIndex = 0;
+      for (let key in localStorage) {
+        if (key.startsWith('clues')) {
+          const num = parseInt(key.replace('clues', ''), 10);
+          if (!isNaN(num) && num > maxIndex) {
+            maxIndex = num;
+          }
+        }
+      }
+      const nextIndex = maxIndex + 1;
+      localStorage.setItem(`clues${nextIndex}`, JSON.stringify(clues));
+    }
+  }
+
   onlyImageRadio.addEventListener('change', toggleCluesFieldset);
   imgCluesRadio.addEventListener('change', toggleCluesFieldset);
 
   confirmClueNumberBtn.addEventListener('click', confirmClueNumber);
+
+  insertCluesBtn.addEventListener('click', () => {
+    const clues = getClues();
+    setClues(clues);
+    const clueInputs = clueTable.getElementsByClassName('value-input');
+
+    for (let input of clueInputs) {
+      input.value = '';
+    }
+  });
 });
